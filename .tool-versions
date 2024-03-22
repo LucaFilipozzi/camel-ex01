@@ -1,0 +1,5 @@
+# © 2024 Luca Filipozzi. All rights reserved.
+jbang 0.115.0
+direnv 2.34.0
+maven 3.9.6
+java corretto-22.0.0.36.2
