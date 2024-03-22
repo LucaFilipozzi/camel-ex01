@@ -19,4 +19,6 @@ You can find more information about Apache Camel at the website: http://camel.ap
 
 
 ---
-© 2024 Luca Filipozzi. Some rights reserved. See LICENSE.
+© 2024 Luca Filipozzi. Some rights reserved. See [LICENSE][license].
+
+[license]: https://github.com/LucaFilipozzi/camel-ex01/blob/main/LICENSE.md
