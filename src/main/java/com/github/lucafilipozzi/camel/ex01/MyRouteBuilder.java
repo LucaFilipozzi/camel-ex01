@@ -1,4 +1,4 @@
-// © 2024 Luca Filipozzi. All rights reserved.
+// © 2024 Luca Filipozzi. Some rights reserved. See LICENSE.
 
 package com.github.lucafilipozzi.camel.ex01;
 

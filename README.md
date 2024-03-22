@@ -1,16 +1,17 @@
-# Camel Java Router Project
+# Camel Project - Example 01
 
 ## How to Build
 
 To build this project use
 
+    asdf install
     mvn install
 
 ## How to Run
 
 You can run this example using
 
-    mvn camel:run
+    mvn camel:run -Dcamel.main.durationMaxMessages=2
 
 ## More Information
 
@@ -18,4 +19,4 @@ You can find more information about Apache Camel at the website: http://camel.ap
 
 
 ---
-© 2024 Luca Filipozzi. All rights reserved.
+© 2024 Luca Filipozzi. Some rights reserved. See LICENSE.

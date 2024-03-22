@@ -1,23 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- © 2024 Luca Filipozzi. All rights reserved. -->
+<!-- © 2024 Luca Filipozzi. Some rights reserved. See LICENSE. -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
   <modelVersion>4.0.0</modelVersion>
-
   <groupId>com.github.lucafilipozzi.camel</groupId>
-  <artifactId>el-ex01</artifactId>
+  <artifactId>ex01</artifactId>
   <packaging>jar</packaging>
   <version>1.0.0-SNAPSHOT</version>
-
   <name>Camel Example 01</name>
-
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <log4j2-version>2.13.3</log4j2-version>
   </properties>
-
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -29,9 +24,7 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-
   <dependencies>
-
     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-core</artifactId>
@@ -40,24 +33,20 @@
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-main</artifactId>
     </dependency>
-
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-slf4j-impl</artifactId>
       <scope>runtime</scope>
       <version>${log4j2-version}</version>
     </dependency>
-
     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-test</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>
-
   <build>
     <defaultGoal>install</defaultGoal>
-
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -75,7 +64,6 @@
           <encoding>UTF-8</encoding>
         </configuration>
       </plugin>
-
       <plugin>
         <groupId>org.apache.camel</groupId>
         <artifactId>camel-maven-plugin</artifactId>
@@ -85,8 +73,6 @@
           <mainClass>com.github.lucafilipozzi.camel.ex01.MainApp</mainClass>
         </configuration>
       </plugin>
-
     </plugins>
   </build>
-
 </project>
