@@ -1,2 +1,4 @@
 # © 2024 Luca Filipozzi. All rights reserved.
+*.iml
+.idea/
 target/
