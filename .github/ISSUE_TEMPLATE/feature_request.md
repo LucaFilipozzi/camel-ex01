@@ -6,5 +6,4 @@ labels: ''
 assignees: ''
 
 ---
-
-Tell us what about the feature that you are requesting.
+Please provide use case for requested feature.

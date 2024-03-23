@@ -6,7 +6,4 @@ labels: ''
 assignees: ''
 
 ---
-
-Tell us what your were doing when you encountered the bug.
-
-Provide sufficient details for us to reproduce the issue.
+Please provide sufficient details for bug reproduction.
