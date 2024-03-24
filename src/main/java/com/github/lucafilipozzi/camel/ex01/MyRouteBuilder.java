@@ -18,29 +18,43 @@ public class MyRouteBuilder extends RouteBuilder {
         from("file:src/data?noop=true")
             .routeId("mainflow")
             .log("${id}: sending to subflow1 and subflow2")
-            .to("direct:subflow1")  // subflow1 processes xml
+            .to("direct:subflow1")  // subflow1 processes xml using xpath
+            .to("direct:subflow4")  // subflow4 processes xml using xquery
             .to("xj:identity?transformDirection=XML2JSON")
             .to("direct:subflow2")  // subflow2 processes json using jq
             .to("direct:subflow3")  // subflow3 processes json using jsonpath
         .end();
 
+        // https://camel.apache.org/components/4.4.x/languages/xpath-language.html
         from("direct:subflow1")
             .routeId("subflow1")
             .log("${id}: processing")
             .choice()
-                .when(xpath("/person/city = 'London'"))
+                .when().xpath("/person/city = 'London'")
                     .log("${id}: UK message")
                     .to("file:target/messages/uk")
                 .otherwise()
                     .log("${id}: Other message")
                     .to("file:target/messages/others");
 
+        // https://camel.apache.org/components/4.4.x/languages/xquery-language.html
+        from("direct:subflow4")
+            .routeId("subflow4")
+            .log("${id}: processing")
+                .choice()
+                    .when().xquery("/person[city = 'London']")
+                        .log("${id}: UK message")
+                        .to("file:target/messages/uk")
+                    .otherwise()
+                        .log("${id}: Other message")
+                        .to("file:target/messages/others");
+
         // https://camel.apache.org/components/4.4.x/languages/jq-language.html
         from("direct:subflow2")
             .routeId("subflow2")
             .log("${id}: processing")
             .choice()
-                .when(jq(".city == \"London\""))
+                .when().jq(".city == \"London\"")
                     .log("${id}: UK message")
                     .to("mock:result")
                 .otherwise()
@@ -52,7 +66,7 @@ public class MyRouteBuilder extends RouteBuilder {
             .routeId("subflow3")
             .log("${id}: processing")
             .choice()
-                .when(jsonpath("$[?(@.city == 'London')]"))
+                .when().jsonpath("$[?(@.city == 'London')]")
                     .log("${id}: UK message")
                     .to("mock:result")
                 .otherwise()
